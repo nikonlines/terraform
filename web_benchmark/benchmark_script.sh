@@ -3,12 +3,12 @@
 SITE_URL="https://<web_site>/"
 #
 TORIPTABLES_ENABLE=true
-TOR_ENTRYNODES="ua"
-TOR_EXITNODES="ua"
+TOR_ENTRYNODES=""
+TOR_EXITNODES=""
 #
 NUMBER_REQUEST=1000000
 NUMBER_CONCURRENCY=1000
-USER_AGENT="User-Agent: Google Bot"
+USER_AGENT="User-Agent: ..."
 
 #-----------------------------
 # System update
