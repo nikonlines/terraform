@@ -9,7 +9,7 @@
 
 2) Чмодим скрипт автозапуска-контейнера, делая его исполняемым:
 
-> sudo chmod 755 entrypoint.sh
+> chmod 755 entrypoint.sh
 
 3) Билдим Docker-образ:
 
