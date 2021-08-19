@@ -1,0 +1,27 @@
+FROM debian:latest
+
+ENV USER_LOGIN="admin"
+ENV USER_PASSWORD="admin"
+#
+ENV ROOT_PASSWORD=""
+ENV ROOT_SSH_ENABLE="false"
+#
+ENV TERRAFORM_VER="1.0.5"
+ENV TERRAFORM_DIR /terraform
+
+RUN apt-get update; \
+    apt-get install -y sudo ssh vim nano mc git wget net-tools iputils-ping
+
+WORKDIR ${TERRAFORM_DIR}
+
+RUN wget https://releases.hashicorp.com/terraform/${TERRAFORM_VER}/terraform_${TERRAFORM_VER}_linux_arm.zip; \
+    unzip terraform_${TERRAFORM_VER}_linux_arm.zip; \
+	mv terraform /usr/bin; \
+	rm -f terraform_${TERRAFORM_VER}_linux_arm.zip
+
+COPY entrypoint.sh /
+ENTRYPOINT ["/entrypoint.sh"]
+
+VOLUME [ "${TERRAFORM_DIR}" ]
+
+EXPOSE 22/tcp
