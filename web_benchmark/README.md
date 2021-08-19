@@ -5,3 +5,17 @@
 3) Указываем колличество серверов в файле "benchmark_terraform.tf" (по дефолту 6 серверов):
 
 > count = 6
+
+------------------
+
+1) Настройка Terraform в папке с файлами:
+
+> terraform init
+
+2) Запуск Terraform в папке с файлами (создает сервера):
+
+> terraform apply
+
+3) Остановка Terraform в папке с файлами (удаляет сервера):
+
+> terraform destroy
