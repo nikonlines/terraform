@@ -8,6 +8,9 @@ ENV ROOT_SSH_ENABLE="false"
 #
 ENV TERRAFORM_DIR /terraform
 
+ENV AWS_ACCESS_KEY_ID=""
+ENV AWS_SECRET_ACCESS_KEY=""
+
 RUN apt-get update; \
     apt-get install -y sudo ssh vim nano mc git wget net-tools iputils-ping
 
